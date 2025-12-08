@@ -94,9 +94,9 @@ The goal is to offer a smooth and intuitive analytical experience for retail sal
    ```bash
    npm run dev
    ```
-
+Example:
+Frontend(React+vite) run in the port number 5173 and backend(express+node) run in the port number 5000
 The app will run at `http://localhost:5173` and communicate with backend API at `http://localhost:5000/api/sales`.
 
 ```
-Sample output<img width="1830" height="797" alt="Screenshot 2025-12-09 013623" src="https://github.com/user-attachments/assets/7878ab46-ddca-4c6f-8597-a731876aa05b" />
 
