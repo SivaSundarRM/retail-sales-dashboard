@@ -26,3 +26,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+
+Backend/truestate_assignment_dataset.csv
+*.csv
