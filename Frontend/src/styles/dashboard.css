@@ -1,0 +1,166 @@
+/* ==========================================
+   GLOBAL RESET + PAGE FIXES
+========================================== */
+html, body {
+width: auto;
+overflow: visible;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.page-wrapper {
+  padding: 20px 28px;   
+  background: #f3f4f9;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   HEADER + SEARCH BAR
+========================================== */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1d1d29;
+}
+
+.search-input {
+  padding: 12px 16px;
+  width: 320px;
+  border-radius: 10px;
+  border: 1.5px solid #d4d4e3;
+  background: #ffffff;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.search-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 8px #6366f150;
+}
+
+/* ==========================================
+   FILTERS — TWO ROWS, 5 PER ROW
+========================================== */
+.filters-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filters-row {
+  display: grid;
+  grid-template-columns: repeat(5, 180px);  /* EXACT 5 FILTERS PER ROW */
+  gap: 14px 18px;
+  justify-content: flex-start;
+}
+
+.filters-row select,
+.filters-row input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccccdd;
+  font-size: 14px;
+  background: #fff;
+  width: 180px;
+  box-sizing: border-box;
+  transition: 0.2s;
+}
+
+.filters-row select:hover,
+.filters-row input:hover {
+  border-color: #6366f1;
+}
+
+/* Empty placeholders to complete 5 columns */
+.empty-filter {
+  width: 180px;
+}
+
+/* ==========================================
+   METRIC CARDS
+========================================== */
+.metrics-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.metric-card {
+  background: #ffffff;
+  padding: 18px 24px;
+  border-radius: 14px;
+  min-width: 220px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.metric-title {
+  font-size: 13px;
+  color: #6c6c85;
+}
+
+.metric-value {
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 6px;
+  color: #4f46e5;
+}
+
+/* ==========================================
+   LOADING
+========================================== */
+.loading {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+
+/* ==========================================
+   PAGINATION
+========================================== */
+.pagination {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+  padding-left: 10px;  /* Soft left margin */
+}
+
+
+.pagination button {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background: #4338ca;
+}
+
+.pagination button:disabled {
+  background: #a8a8c5;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  font-weight: 800;
+  text-decoration: underline;
+}

@@ -1,0 +1,72 @@
+/* ================= TABLE WRAPPER (scroll support) ================= */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;      /* ENABLE horizontal scroll */
+  overflow-y: visible;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+/* Wide table to allow scrolling */
+.sales-table {
+  width: max-content;      /* expands to fit all columns */
+  min-width: 1800px;       /* ensures horizontal scroll */
+  border-collapse: collapse;
+}
+
+/* ================= TABLE HEADER ================= */
+.sales-table th {
+  background: #f3f4ff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 2px solid #e0e0e0;
+  white-space: nowrap;      /* prevents text wrapping */
+}
+
+/* ================= TABLE CELLS ================= */
+.sales-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  white-space: nowrap;      /* keeps table aligned */
+}
+
+/* Hover Effect */
+.sales-table tr:hover {
+  background: #f0f4ff;
+  transition: 0.2s ease;
+}
+
+/* Remove last border */
+.sales-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Highlight styles (optional) */
+.name-highlight {
+  font-weight: 600;
+  color: #2c3dff;
+}
+
+.category-tag {
+  background: #eef0ff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #323cff;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-delivered {
+  color: #28a745;
+  font-weight: 600;
+}
+.status-pending {
+  color: #ffc107;
+  font-weight: 600;
+}

@@ -1,0 +1,30 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.search-input {
+  width: 300px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.pagination button {
+  margin: 0 6px;
+}
+.pagination .active {
+  font-weight: bold;
+}
+
+:root {
+  --bg: #ffffff;
+  --bg-light: #f8f9fa;
+  --card: #ffffff;
+  --text: #222;
+  --text-light: #555;
+  --border: #e5e7eb;
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --radius: 12px;
+  --shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
