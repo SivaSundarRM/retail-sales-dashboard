@@ -1,5 +1,5 @@
 import SearchBar from "../components/SearchBar";
-import SortDropdown from "../components/SortDropdown";
+import SortDropdown from "../components/SortDropDown";
 import Pagination from "../components/Pagination";
 import TransactionTable from "../components/TransactionTable";
 import NoResults from "../components/NoResults";
