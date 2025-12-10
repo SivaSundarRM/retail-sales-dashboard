@@ -71,7 +71,7 @@ export const getSales = async ({ search, filters, sort, page }) => {
         _id: null,
         totalQty: { $sum: "$Quantity" },
         totalAmount: { $sum: "$Final Amount" },
-        totalDiscount: { $sum: "$Discount Percentage" }
+        totalDiscount: { $avg: "$Discount Percentage" }
       }
     }
   ]);
