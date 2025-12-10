@@ -5,7 +5,6 @@ export default function TransactionTable({ data }) {
     return <p>No results available</p>;
   }
 
-  // Get all column names except MongoDB _id
   const columns = Object.keys(data[0]).filter(col => col !== "_id");
 
   return (
