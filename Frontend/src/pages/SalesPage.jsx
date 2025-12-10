@@ -78,7 +78,7 @@ export default function SalesPage() {
         </div>
 
         <div className="metric-card">
-          <div className="metric-title">Total Discount %</div>
+          <div className="metric-title">Average Discount %</div>
           <div className="metric-value">{metrics.totalDiscount}%</div>
         </div>
       </div>
