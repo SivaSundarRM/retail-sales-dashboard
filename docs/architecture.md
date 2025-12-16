@@ -193,22 +193,37 @@ This flow ensures that the server does all heavy operations, and the frontend re
 Module	Responsibility
 
 SalesPage.jsx	        Main dashboard; coordinates search, filters, sorting, pagination, table, metrics
+
 SearchBar.jsx	        Handles real-time search input
+
 Filters/	            Each filter updates the global filters state
+
 SortDropdown.jsx	    Sorts table based on selected field
+
 Pagination.jsx	        Moves between pages and triggers data fetch
+
 TransactionTable.jsx	Renders dynamic columns and rows
+
 useSalesData.jsx	    Central logic: API calls, state management, merging search+filters+sort+pagination
+
 NoResults.jsx	        Shown when no data matches the query
+
 dashboard.css	        Layout, filters, header, metrics styling
+
 table.css	            Horizontal scroll, table styling
 
 🔷 Backend Module Responsibilities
 
 Module	Responsibility
+
 salesRoutes.js	                Defines /api/sales routes
+
 salesController.js	            Handles incoming API requests; extracts parameters; returns response
+
 salesService.js	Business logic: search, filter, sort, pagination, metrics
+
 Sales.js (Mongoose Model)	    Schema for storing sales data
+
 db.js	                        MongoDB Atlas connection
+
 index.js	                    Initializes Express server and middleware
