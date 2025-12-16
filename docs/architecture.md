@@ -186,8 +186,12 @@ Below is the complete flow of data from user interaction → database → UI:
 This flow ensures that the server does all heavy operations, and the frontend remains lightweight and fast.
 
 ⭐ 4. Module Responsibilities
+
+
 🔷 Frontend Module Responsibilities
+
 Module	Responsibility
+
 SalesPage.jsx	        Main dashboard; coordinates search, filters, sorting, pagination, table, metrics
 SearchBar.jsx	        Handles real-time search input
 Filters/	            Each filter updates the global filters state
@@ -198,7 +202,9 @@ useSalesData.jsx	    Central logic: API calls, state management, merging search+
 NoResults.jsx	        Shown when no data matches the query
 dashboard.css	        Layout, filters, header, metrics styling
 table.css	            Horizontal scroll, table styling
+
 🔷 Backend Module Responsibilities
+
 Module	Responsibility
 salesRoutes.js	                Defines /api/sales routes
 salesController.js	            Handles incoming API requests; extracts parameters; returns response
