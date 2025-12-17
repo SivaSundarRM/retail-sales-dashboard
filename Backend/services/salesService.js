@@ -1,9 +1,8 @@
 import Sales from "../models/Sales.js";
 
-export const getSales = async ({ search, filters, sort, page }) => {
+export const getSales = async ({ search, filters = {}, sort, page = 1 }) => {
   const query = {};
 
-  // ---------------- SEARCH ----------------
   if (search) {
     const regex = new RegExp(search, "i");
     query.$or = [
@@ -12,27 +11,26 @@ export const getSales = async ({ search, filters, sort, page }) => {
     ];
   }
 
-  // ---------------- FILTERS ----------------
-  if (filters.region?.length > 0) {
+  if (filters.region?.length) {
     query["Customer Region"] = { $in: filters.region };
   }
 
   if (filters.gender) {
-    query["Gender"] = filters.gender;
+    query.Gender = filters.gender;
   }
 
   if (filters.age) {
     query.Age = {
-      $gte: filters.age.min || 0,
-      $lte: filters.age.max || 120
+      $gte: filters.age.min ?? 0,
+      $lte: filters.age.max ?? 120
     };
   }
 
-  if (filters.category?.length > 0) {
+  if (filters.category?.length) {
     query["Product Category"] = { $in: filters.category };
   }
 
-  if (filters.tags?.length > 0) {
+  if (filters.tags?.length) {
     query.Tags = { $regex: filters.tags.join("|"), $options: "i" };
   }
 
@@ -46,13 +44,12 @@ export const getSales = async ({ search, filters, sort, page }) => {
     if (filters.date.to) query.Date.$lte = new Date(filters.date.to);
   }
 
-  // ---------------- SORTING ----------------
-  const sortOption = {};
-  if (sort === "date_desc") sortOption.Date = -1;
-  if (sort === "quantity") sortOption.Quantity = -1;
-  if (sort === "name_asc") sortOption["Customer Name"] = 1;
+  const sortOption = { _id: 1 }; // oldest → newest
 
-  // ---------------- PAGINATION ----------------
+  if (sort === "date_desc") sortOption.Date = -1;
+  else if (sort === "quantity") sortOption.Quantity = -1;
+  else if (sort === "name_asc") sortOption["Customer Name"] = 1;
+
   const pageSize = 10;
   const skip = (page - 1) * pageSize;
 
@@ -63,7 +60,6 @@ export const getSales = async ({ search, filters, sort, page }) => {
     .skip(skip)
     .limit(pageSize);
 
-  // ---------------- METRICS ----------------
   const agg = await Sales.aggregate([
     { $match: query },
     {
