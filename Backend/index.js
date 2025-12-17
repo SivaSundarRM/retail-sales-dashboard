@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://Siva:nZcBht17rwymWkil@cluster0.pyx7cj1.mongodb.net/SalesDB?retryWrites=true&w=majority&appName=Cluster0")
+  .connect("Write your MongoDB Cluster URL  here")
   .then(() => console.log("MongoDB Atlas Connected"))
   .catch((err) => console.log(" MongoDB Connection Error:", err));
 
